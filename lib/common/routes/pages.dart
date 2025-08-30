@@ -1,25 +1,22 @@
-import 'package:elearning/pages/course/course_detail/bloc/course_detail_bloc.dart';
-
-import '../../pages/course/course_detail/course_detail_page.dart';
-
-import '../../pages/home/bloc/home_bloc.dart';
-import '../../pages/home/home_page.dart';
-import '../../pages/profile/settings/bloc/settings_bloc.dart';
-import '../../pages/profile/settings/settings_page.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../global.dart';
 import '../../pages/application/application_page.dart';
 import '../../pages/application/bloc/app_bloc.dart';
-
-import 'names.dart';
+import '../../pages/course/course_detail/bloc/course_detail_bloc.dart';
+import '../../pages/course/course_detail/course_detail_page.dart';
+import '../../pages/home/bloc/home_bloc.dart';
+import '../../pages/home/home_page.dart';
+import '../../pages/profile/settings/bloc/settings_bloc.dart';
+import '../../pages/profile/settings/settings_page.dart';
 import '../../pages/register/bloc/register_bloc.dart';
 import '../../pages/register/register.dart';
 import '../../pages/signin/bloc/sign_in_bloc.dart';
 import '../../pages/signin/sign_in.dart';
 import '../../pages/welcome/bloc/welcome_bloc.dart';
 import '../../pages/welcome/welcome.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'names.dart';
 
 class AppPages {
   static final List<PageEntity> _routes = [

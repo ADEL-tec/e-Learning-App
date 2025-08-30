@@ -1,12 +1,12 @@
-import 'package:elearning/pages/course/course_detail/bloc/course_detail_bloc.dart';
-import 'package:elearning/pages/course/course_detail/bloc/course_detail_event.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 import '../../../common/apis/course_api.dart';
 import '../../../common/entities/entities.dart';
 import '../../../common/widgets/flutter_toast.dart';
-import 'package:flutter/material.dart';
+import 'bloc/course_detail_bloc.dart';
+import 'bloc/course_detail_event.dart';
 
 class CourseDetailController {
   final BuildContext context;

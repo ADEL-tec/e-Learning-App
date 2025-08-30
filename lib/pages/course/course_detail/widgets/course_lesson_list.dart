@@ -1,6 +1,7 @@
-import '../../../../common/values/color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../../../common/values/color.dart';
 
 class CourseLessonList extends StatelessWidget {
   const CourseLessonList({super.key});

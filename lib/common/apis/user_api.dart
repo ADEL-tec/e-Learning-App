@@ -1,5 +1,4 @@
 import '../entities/user.dart';
-
 import '../utils/http_util.dart';
 
 class UserAPI {

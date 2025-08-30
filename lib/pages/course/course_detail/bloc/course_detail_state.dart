@@ -1,4 +1,4 @@
-import 'package:elearning/common/entities/entities.dart';
+import '../../../../common/entities/entities.dart';
 
 class CourseDetailState {
   final CourseItem? courseItem;

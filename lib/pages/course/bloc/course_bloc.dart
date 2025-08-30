@@ -1,8 +1,9 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
-import '../../../common/entities/entities.dart';
 import 'package:meta/meta.dart';
+
+import '../../../common/entities/entities.dart';
 
 part 'course_event.dart';
 part 'course_state.dart';

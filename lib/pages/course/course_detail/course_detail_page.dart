@@ -1,15 +1,13 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../common/values/color.dart';
 import 'bloc/course_detail_bloc.dart';
 import 'bloc/course_detail_state.dart';
 import 'course_detail_controller.dart';
 import 'widgets/course_detail_app_bar.dart';
 import 'widgets/course_detail_head_text.dart';
 import 'widgets/course_lesson_list.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import 'widgets/course_summary.dart';
 import 'widgets/description_txt.dart';
 import 'widgets/go_buy_btn.dart';
@@ -40,7 +38,6 @@ class _CourseDetailPageState extends State<CourseDetailPage> {
         if (state.courseItem != null) {
           final course = state.courseItem!;
           return Scaffold(
-            backgroundColor: AppColors.primaryBackground,
             appBar: CourseDetailAppBar(),
             body: SafeArea(
               child: SingleChildScrollView(

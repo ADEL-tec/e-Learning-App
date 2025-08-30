@@ -1,3 +1,4 @@
+import 'package:elearning/common/values/color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -15,7 +16,14 @@ class ProfileImage extends StatelessWidget {
         image: DecorationImage(image: AssetImage('assets/icons/headpic.png')),
       ),
       alignment: Alignment.bottomRight,
-      child: Image.asset("assets/icons/edit_3.png", width: 25.w, height: 25.w),
+      child: Container(
+        padding: EdgeInsets.all(2.w),
+        decoration: BoxDecoration(
+          color: AppColors.primaryElement,
+          borderRadius: BorderRadius.circular(5.w),
+        ),
+        child: Icon(Icons.edit, size: 20.w, color: Colors.white),
+      ),
     );
   }
 }

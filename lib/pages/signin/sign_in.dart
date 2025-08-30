@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../common/routes/routes.dart';
-import '../../common/values/color.dart';
 import '../widgets/auth_btn.dart';
 import '../widgets/custom_app_bar.dart';
 import '../widgets/forgot_pass.dart';
@@ -24,7 +23,6 @@ class _SignInState extends State<SignIn> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.primaryBackground,
       appBar: CustomAppBar(title: "Log in"),
       body: BlocProvider(
         create: (context) => SignInBloc(),

@@ -19,7 +19,6 @@ class _ApplicationPageState extends State<ApplicationPage> {
     return BlocBuilder<AppBloc, AppState>(
       builder: (context, state) {
         return Scaffold(
-          backgroundColor: AppColors.primaryBackground,
           body: SafeArea(child: buildPage(state.index)),
           bottomNavigationBar: Container(
             clipBehavior: Clip.antiAlias,

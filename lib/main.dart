@@ -1,3 +1,4 @@
+import 'package:elearning/common/values/color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
@@ -24,13 +25,16 @@ class MyApp extends StatelessWidget {
         builder: (context, child) => MaterialApp(
           builder: EasyLoading.init(),
           debugShowCheckedModeBanner: false,
-          title: 'Flutter Demo',
+          title: 'e-learning',
           theme: ThemeData(
+            scaffoldBackgroundColor: AppColors.primaryBackground,
             appBarTheme: AppBarTheme(
               backgroundColor: Colors.white,
               elevation: 0,
             ),
-            colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+            colorScheme: ColorScheme.fromSeed(
+              seedColor: AppColors.primaryElement,
+            ),
           ),
           onGenerateRoute: AppPages.onGenerateRoute,
           // initialRoute: AppRoutes.initial,
