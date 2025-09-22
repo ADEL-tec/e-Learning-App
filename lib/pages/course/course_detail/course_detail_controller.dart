@@ -1,3 +1,5 @@
+import '../../../common/apis/lesson_api.dart';
+import '../../../common/routes/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
@@ -17,6 +19,7 @@ class CourseDetailController {
     final args = ModalRoute.of(context)!.settings.arguments as Map;
 
     loadAllData(args['id']);
+    loadLessonData(args['id']);
   }
 
   Future<void> loadAllData(int? id) async {
@@ -49,10 +52,35 @@ class CourseDetailController {
     EasyLoading.dismiss();
 
     if (result.code == 200) {
+      print(" debug =>> ${result.data}");
       final url = Uri.decodeFull(result.data!);
       print('stripe url: $url');
+
+      final res = await Navigator.of(
+        context,
+      ).pushNamed(AppRoutes.payWebView, arguments: url);
+
+      if (res == "success") {
+        toastInfo(msg: "You bought it successfully");
+      }
     } else {
-      print('Faild Payment');
+      toastInfo(msg: result.msg!);
+    }
+  }
+
+  Future<void> loadLessonData(int id) async {
+    LessonRequestEntity lessonRequestEntity = LessonRequestEntity();
+    lessonRequestEntity.id = id;
+    final result = await LessonApi.lessonList(params: lessonRequestEntity);
+    if (result.code == 200) {
+      if (context.mounted) {
+        context.read<CourseDetailBloc>().add(
+          LessonListTriggerEvent(lessonItems: result.data!),
+        );
+      }
+    } else {
+      toastInfo(msg: result.msg ?? 'somthing went wrong');
+      print('---error code : ${result.code}');
     }
   }
 }

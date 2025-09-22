@@ -7,3 +7,9 @@ class CourseDetailTriggerEvent extends CourseDetailEvent {
 
   CourseDetailTriggerEvent({required this.courseItem});
 }
+
+class LessonListTriggerEvent extends CourseDetailEvent {
+  final List<LessonItem> lessonItems;
+
+  LessonListTriggerEvent({required this.lessonItems});
+}

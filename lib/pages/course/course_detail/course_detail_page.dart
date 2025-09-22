@@ -71,7 +71,7 @@ class _CourseDetailPageState extends State<CourseDetailPage> {
                       SizedBox(height: 15.h),
                       CourseDetailHeadText("Lesson List"),
                       SizedBox(height: 15.h),
-                      CourseLessonList(),
+                      CourseLessonList(state),
                     ],
                   ),
                 ),
