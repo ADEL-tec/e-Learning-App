@@ -1,3 +1,10 @@
+import '../../pages/profile/bloc/profile_bloc.dart';
+import '../../pages/profile/profile_page.dart';
+
+import '../../pages/course/lesson/bloc/lesson_bloc.dart';
+import '../../pages/course/lesson/lesson_detail.dart';
+import '../../pages/course/paywebview/bloc/pay_web_view_bloc.dart';
+import '../../pages/course/paywebview/paywebview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -56,6 +63,21 @@ class AppPages {
       bloc: BlocProvider<CourseDetailBloc>(
         create: (context) => CourseDetailBloc(),
       ),
+    ),
+    PageEntity(
+      route: AppRoutes.lessonDetail,
+      page: LessonDetail(),
+      bloc: BlocProvider<LessonBloc>(create: (context) => LessonBloc()),
+    ),
+    PageEntity(
+      route: AppRoutes.payWebView,
+      page: Paywebview(),
+      bloc: BlocProvider<PayWebViewBloc>(create: (context) => PayWebViewBloc()),
+    ),
+    PageEntity(
+      route: AppRoutes.profile,
+      page: ProfilePage(),
+      bloc: BlocProvider<ProfileBloc>(create: (context) => ProfileBloc()),
     ),
   ];
 
@@ -119,6 +141,18 @@ class AppPages {
         );
       case AppRoutes.courseDetail:
         final page = _getPage(AppRoutes.courseDetail);
+        return MaterialPageRoute(
+          builder: (context) => page,
+          settings: settings,
+        );
+      case AppRoutes.payWebView:
+        final page = _getPage(AppRoutes.payWebView);
+        return MaterialPageRoute(
+          builder: (context) => page,
+          settings: settings,
+        );
+      case AppRoutes.lessonDetail:
+        final page = _getPage(AppRoutes.lessonDetail);
         return MaterialPageRoute(
           builder: (context) => page,
           settings: settings,

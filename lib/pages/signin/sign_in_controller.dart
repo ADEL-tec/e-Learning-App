@@ -4,6 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 import '../../common/apis/user_api.dart';
 import '../../common/entities/user.dart';
@@ -16,6 +17,7 @@ import 'bloc/sign_in_bloc.dart';
 
 class SignInController {
   final BuildContext context;
+  final GoogleSignIn _googleSignIn = GoogleSignIn.instance;
 
   SignInController({required this.context});
 
@@ -75,6 +77,44 @@ class SignInController {
             toastInfo(msg: "Currently you are not a user of this app");
             return;
           }
+        } on FirebaseAuthException catch (e) {
+          if (e.code == "user-not-found") {
+            print('no user found for that email');
+            toastInfo(msg: "No user found for that email");
+          } else if (e.code == "wrong-password") {
+            print("wrong password provided fo that user");
+            toastInfo(msg: "Wrong password provided fo that user");
+          } else if (e.code == "invalid-email") {
+            print("Your email format is incorrect");
+            toastInfo(msg: "Your email format is incorrect");
+          } else if (e.code == "invalid-credential") {
+            print("invalid credentials");
+            toastInfo(msg: "Your email or password is incorrect");
+          } else {
+            print(e);
+          }
+        }
+      }
+
+      if (type == AuthType.google) {
+        try {
+          final user = await _googleSignIn.authenticate();
+
+          String? displayName = user.displayName;
+          String? email = user.email;
+          String? id = user.id;
+          String? photoUrl =
+              user.photoUrl ?? "${AppConstants.SERVER_UPLOADS}default.png";
+
+          LoginRequestEntity loginRequestEntity = LoginRequestEntity(
+            avatar: photoUrl,
+            name: displayName,
+            email: email,
+            openId: id,
+            type: 2, // type 1 means google
+          );
+
+          asyncPostAllData(loginRequestEntity);
         } on FirebaseAuthException catch (e) {
           if (e.code == "user-not-found") {
             print('no user found for that email');

@@ -45,5 +45,28 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+
+	<key>NSLocalNetworkUsageDescription</key>
+	<string>Your app needs local network access to play videos from your local server.</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+<!-- Google Sign-in Section -->
+	<key>GIDClientID</key>
+	<string>739629943475-ggch1821d8og042tpef60ldk8i35c324.apps.googleusercontent.com</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.739629943475-ggch1821d8og042tpef60ldk8i35c324</string>
+			</array>
+		</dict>
+	</array>
+<!-- End of the Google Sign-in Section -->
 </dict>
 </plist>

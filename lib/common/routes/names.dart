@@ -8,4 +8,7 @@ class AppRoutes {
   static const String home = "/home";
   static const String settings = "/settings";
   static const String courseDetail = "/course-detail";
+  static const String payWebView = "/pay-webView";
+  static const String lessonDetail = "/lesson-detail";
+  static const String profile = "/profile";
 }

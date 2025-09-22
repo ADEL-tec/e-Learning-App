@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../common/values/color.dart';
 
-enum AuthType { login, register }
+enum AuthType { login, google, facebook, apple, register }
 
 class AuthBtn extends StatelessWidget {
   const AuthBtn({

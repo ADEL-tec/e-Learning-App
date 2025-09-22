@@ -1,6 +1,7 @@
-import '../../../../common/values/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../../../common/values/constants.dart';
 
 class Thumbnail extends StatelessWidget {
   const Thumbnail(this.image, {super.key});

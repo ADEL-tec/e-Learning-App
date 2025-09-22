@@ -26,7 +26,7 @@ class CourseApi {
       'api/checkout',
       queryParameters: params.toJson(),
     );
-    print(response);
+    print("Debug one =>  $response");
     return BaseResponseEntity.fromJson(response);
   }
 }

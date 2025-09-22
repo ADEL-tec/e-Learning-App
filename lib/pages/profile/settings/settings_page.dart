@@ -1,15 +1,14 @@
-import '../../home/bloc/home_bloc.dart';
-
-import '../../../common/routes/routes.dart';
-import '../../../common/values/constants.dart';
-import '../../application/bloc/app_bloc.dart';
-import 'widgets/settings_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../common/routes/routes.dart';
+import '../../../common/values/constants.dart';
 import '../../../global.dart';
+import '../../application/bloc/app_bloc.dart';
+import '../../home/bloc/home_bloc.dart';
 import 'bloc/settings_bloc.dart';
+import 'widgets/settings_app_bar.dart';
 
 class SettingsPage extends StatelessWidget {
   const SettingsPage({super.key});
